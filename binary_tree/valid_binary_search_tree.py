@@ -7,6 +7,3 @@ def valid_bst(root):
             return False
         return dfs(node.left, min_, node.val) and dfs(node.right, node.val, max_)
     return dfs(root, float('-inf'), float('inf'))
-
-
-

@@ -2,13 +2,10 @@
 def min_add(s):
     stack = []
     for c in s:
-        if c == '(':
-            stack.append(c)
+        if stack and stack[-1] == '(' and c == ')':
+            stack.pop()
         else:
-            if stack and stack[-1] == ')':
-                stack.pop()
-            else:
-                stack.append(c)
+            stack.append(c)
     return len(stack)
 
 

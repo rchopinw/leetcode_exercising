@@ -1,18 +1,14 @@
 # LC 1249 Min remove to make valid parentheses
 def min_remove_valid_parentheses(s):
     stack = []
-    flag = False
     for i, c in enumerate(s):
         if c.isalpha():
             continue
-        elif c == '(':
-            stack.append((i, c))
+        if stack and s[stack[-1]] + c == '()':
+            stack.pop()
         else:
-            if stack and stack[-1][1] == '(':
-                stack.pop()
-            else:
-                stack.append((i, c))
+            stack.append(i)
     s = list(s)
-    for i, _ in stack:
+    for _, i in enumerate(stack):
         s[i] = ''
     return ''.join(s)

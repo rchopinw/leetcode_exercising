@@ -11,6 +11,11 @@ def trap_monotonic_stack(heights):
 
 
 def trap_two_pointers(heights):
+    """
+    Space complexity: O(1) constant space complexity
+    :param heights:
+    :return:
+    """
     ans = 0
     left_max, right_max = 0, 0
     left, right = 0, len(heights) - 1

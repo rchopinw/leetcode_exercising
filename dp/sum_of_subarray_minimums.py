@@ -9,4 +9,5 @@ def sum_of_subarray(arr):
             dp[i] = dp[stack[-1]] + num * (i - stack[-1])
         else:
             dp[i] = num * (i + 1)
+        stack.append(i)
     return sum(dp)

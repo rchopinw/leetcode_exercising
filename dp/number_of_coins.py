@@ -1,5 +1,12 @@
 # LC 518: Coin Change
-def coin_change(amount, coins):
+def coin_change_ii(amount, coins):
+    """
+    Time Complexity: O(S * N)
+    Space Complexity: O(N)
+    :param amount:
+    :param coins:
+    :return:
+    """
     dp = [1] + [0 for _ in range(amount)]
     for coin in coins:
         for i in range(coin, amount + 1):

@@ -9,3 +9,4 @@ def sub_array_sum(nums, k):
         count += (cur_sum == k) + prefix[cur_sum - k]
         prefix[cur_sum] += 1
     return count
+

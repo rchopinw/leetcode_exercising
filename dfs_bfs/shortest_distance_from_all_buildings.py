@@ -3,6 +3,12 @@ from collections import deque
 
 # LC 317: shortest distance from all buildings
 def shortest_distance_from_buildings(grid):
+    """
+    Time Complexity: O(N^2 * M^2)
+    Space Complexity: O(MN)
+    :param grid:
+    :return:
+    """
     i = 0
     ny, nx = len(grid), len(grid[0])
     directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]

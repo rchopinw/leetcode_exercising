@@ -4,6 +4,7 @@ import heapq
 
 # LC 767: Reorganize string
 def reorganize_string(s):
+    i = 0
     count = Counter(s)
     ans = ["" for _ in range(len(s))]
     pq = [(-y, x) for x, y in count.items()]
@@ -12,7 +13,6 @@ def reorganize_string(s):
         return ""
     while pq:
         ct, ch = heapq.heappop(pq)
-        i = 0
         for j in range(-ct):
             ans[i] = ch
             i += 2

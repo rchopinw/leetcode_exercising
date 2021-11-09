@@ -11,6 +11,13 @@ def two_sum_smaller(nums, left, right, t):
 
 
 def three_sum_smaller(nums, k):
+    """
+    Time Complexity: O(Nlog(N)) + O(N^2) = O(N^2)
+    Space Complexity: O(1)
+    :param nums:
+    :param k:
+    :return:
+    """
     if len(nums) < 3:
         return 0
 

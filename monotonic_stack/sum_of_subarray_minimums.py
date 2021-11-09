@@ -10,7 +10,6 @@ def sum_of_subarray(arr):
         else:
             dp[i] = num * (i + 1)
         stack.append(i)
-        print(dp)
     return sum(dp)
 
 

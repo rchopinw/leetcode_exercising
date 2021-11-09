@@ -4,14 +4,14 @@ from random import random
 
 class RandomPickWeight:
     def __init__(self, w):
-        self.w_prefix = self._cal_prefix(w)
+        self.w_prefix = self.__cal_prefix(w)
         self.norm = self.w_prefix[-1]
 
     def pick_index(self, ):
-        return self._binary_search(random() * self.norm)
+        return self.__binary_search(random() * self.norm)
 
-    def _binary_search(self, v):
-        left, right = 0, len(self.w_prefix)
+    def __binary_search(self, v):
+        left, right = 0, len(self.w_prefix) - 1
         while left < right:
             mid = left + (right - left) // 2
             if self.w_prefix[mid] < v:
@@ -20,10 +20,8 @@ class RandomPickWeight:
                 right = mid
         return left
 
-    def _cal_prefix(self, nums):
-        s = 0
-        prefix = []
+    def __cal_prefix(self, nums):
+        prefix = [0]
         for num in nums:
-            s += num
-            prefix.append(s)
-        return prefix
+            prefix.append(num + prefix[-1])
+        return prefix[1:]

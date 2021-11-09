@@ -10,7 +10,7 @@ def add_blod_tag(s, words):
         for i in range(len(s) - window + 1):
             if s[i:i + window] in words:
                 tags.append([i, i + window])
-    tags.sort(key=lambda x: (x[0], -x[1]))
+    tags.sort()
     if not tags:
         return s
     results = [tags[0]]
