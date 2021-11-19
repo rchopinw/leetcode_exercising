@@ -11,10 +11,11 @@ def zigzag_level_order(root):
                 new_stack.append(node.left)
             if node.right:
                 new_stack.append(node.right)
-        if i % 2:
-            results.append([x.val for x in new_stack[::-1]])
-        else:
-            results.append([x.val for x in new_stack])
+        results.append(
+            [x.val for x in new_stack[::-1]]
+            if i % 2 else
+            [x.val for x in new_stack]
+        )
         i += 1
         stack = new_stack
     return results[:-1]
